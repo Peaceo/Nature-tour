@@ -6,8 +6,23 @@
     box-sizing: inherit;
 }
 html{
-    font-size: 62.5%;
+    // This defines what 1rem is s
+    font-size: 62.5%; //1rem = 10px/16px = 62.5%
     
+    /* @include respond(phone){
+        font-size: 50%; //1rem = 8px, 8/16 = 50%
+    } */
+    @include respond(tab-port){
+        font-size: 50%;//1rem = 8px, 8/16 = 50%
+    }
+    
+    @include respond(tab-land){
+        font-size: 56.25%;//1rem = 9px, 9/16 = 56.25%
+    }   
+    
+    @include respond(big-desktop){
+        font-size: 75%;//1rem = 12px, 12/16 = 75%
+    }
 } 
 /* :root{
     font-size: 62.5%;
@@ -18,5 +33,14 @@ body{
     line-height:1.7 ;
     font-size: $default-font-size;
     color: $color-grey-dark;  
-    padding: 30px; 
+    padding: 3rem;
+    
+    @include respond(tab-port){
+        padding: 0;
+    }
+}
+
+::selection{
+    background-color: $color-primary;
+    color: $color-white;
 }

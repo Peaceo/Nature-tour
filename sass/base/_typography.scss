@@ -1,11 +1,4 @@
-.heading-box{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    
-}
+
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
@@ -15,10 +8,16 @@
         display: block;
         font-size: 4rem;
         font-weight: 400;
-        letter-spacing: 4rem;
+        letter-spacing: 3.5rem;
+
         animation-name: moveInLeft;
         animation-duration:3s;    
         animation-timing-function: ease-in;  
+
+        @include respond(phone){
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
     
     }
     &-sub{
@@ -31,6 +30,12 @@
         animation-timing-function: ease-out;
         margin-bottom: 4rem;
     
+        @include respond(phone){
+            letter-spacing: .5rem;
+        }
+        @include respond(tab-land){
+            letter-spacing: 1rem;
+        }
     }
 }
 
@@ -44,6 +49,14 @@
     color: transparent;
     letter-spacing: .2rem;
     transition-property: all .2s;
+
+    @include respond(tab-port){
+        font-size: 3rem;
+    }
+    
+    @include respond(phonr){
+        font-size: 2.5rem;
+    }
     &:hover{
         transform: skewY(2deg) skewX(15deg) scale(1.1);
         text-shadow: .5rem 1rem 2rem rgba($color-black, 0.2);
